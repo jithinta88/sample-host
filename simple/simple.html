@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webcaster Client</title>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.min.css" rel="stylesheet" media="screen">
+  <link href="css/client.css" rel="stylesheet" media="screen">
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.1/underscore-min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+
+  <!-- All these libs required for web streaming-->
+  <script src="js/libshine.js"></script>
+  <script src="js/libsamplerate.js"></script>
+  <script src="js/libmad.js"></script>
+  <script src="js/taglib.js"></script>
+  <script src="js/webcast.js"></script>
+  <script src="js/stream.js"></script>
+  <script src="js/track.js"></script>
+  <script src="js/simple-client.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3 settings">
+        <div class="well sidebar-nav">
+          <form>
+            <fieldset>
+              <legend>Setup</legend>
+              <div class="control-group">
+                <div class="controls">
+                  <button class="btn btn-primary start-stream">Start streaming</button>
+                  <button class="btn btn-danger stop-stream" style="display: none;">Stop streaming</button>
+                  <button class="btn btn-info passThrough">CUE</button>
+                </div>
+              </div>
+              <div class="control-group">
+                <label>Encoder</label>
+                <div class="controls">
+                  <label class="radio inline">
+                      <input type="radio" name="encoder" value="mp3" class="encoder" checked>MP3
+                    </label>
+                  <label class="radio inline">
+                      <input type="radio" name="encoder" value="raw" class="encoder">Raw
+                    </label>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <div class="span3">
+        <div class="microphone well">
+          <div class="microphone-slider"></div>
+          <h3 class="microphone-label">Microphone</h3>
+          <form>
+            <fieldset>
+              <div class="control-group" align="center">
+                <div class="controls">
+                  <button class="btn btn-danger record-audio player-control">
+                    <i class="icon-facetime-video"></i>
+                  </button>
+                  <button class="btn btn-info passThrough">CUE</button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+          <div class="progress progress-left">
+            <div class="bar volume-left" style="width: 0%"></div>
+          </div>
+          <div class="progress progress-right">
+            <div class="bar volume-right" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
